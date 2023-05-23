@@ -5,6 +5,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { AppModule } from 'src/app.module'
 import { AuthDto } from 'src/auth/dto/index';
 import { EditUserDto } from 'src/user/dto';
+import { CreatePostDto } from 'src/post/dto';
 
 
 describe('App e2e', () => {
@@ -160,7 +161,7 @@ describe('App e2e', () => {
           })
           .withBody(dto)
           .expectStatus(200)
-          // .expectBodyContains(dto.email)
+        // .expectBodyContains(dto.email)
       });
 
     })
@@ -197,41 +198,68 @@ describe('App e2e', () => {
 
   });
 
-  describe('Post', ()=>{
-    describe('create a post', ()=>{
-  it.todo('should create a post');
+  describe('Post', () => {
+
+    describe('Get all my post', () => {
+      it('should get all my post', () => {
+        return pactum
+          .spec()
+          .get('/posts')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}'
+          })
+          .expectStatus(200)
+          .expectBody([])
+      });
+    })
+
+    describe('create a post', () => {
+      const dto: CreatePostDto = {
+        title: 'This is the fist test post',
+        body: 'Welcome to bling Project'
+
+      };
+      it.todo('should create a post', () => {
+        return pactum
+          .spec()
+          .get('/posts')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}'
+          })
+          .expectStatus(200)
+          .expectBody([])
+      });
+    })
+
+    describe('get a post by id', () => {
+      it.todo('should get a post by id');
 
     })
 
-    describe('get a post by id', ()=>{
-  it.todo('should get a post by id');
+    describe('Update a post by id', () => {
+      it.todo('should update a post by id');
 
     })
 
-    describe('Update a post by id', ()=>{
-  it.todo('should update a post by id');
+    describe('delete a post by id', () => {
+      it.todo('should delete a post by id');
 
     })
 
-    describe('delete a post by id', ()=>{
-  it.todo('should delete a post by id');
+    //   describe('like a post', ()=>{
+    // it.todo('should like a post');
 
-    })
+    //   })
 
-  //   describe('like a post', ()=>{
-  // it.todo('should like a post');
+    //   describe('get all personal post', ()=>{
+    // it.todo('should get all personal post');
 
-  //   })
+    //   })
 
-  //   describe('get all personal post', ()=>{
-  // it.todo('should get all personal post');
+    //   describe('get all post', ()=>{
+    // it.todo('should get all post');
 
-  //   })
-
-  //   describe('get all post', ()=>{
-  // it.todo('should get all post');
-
-  //   })
+    //   })
 
   });
 

@@ -8,7 +8,7 @@
   "scripts": {
     "db:dev:gen": "npx prisma generate",
     "db:dev:up": "npx prisma db push",
-    "db:dev:restart": " npm run db:dev:gen && sleep 1 && npm run db:dev:up ",
+    "db:dev:restart": " npm run db:dev:gen && npm run db:dev:up ",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
