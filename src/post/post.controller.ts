@@ -21,16 +21,16 @@ export class PostController {
         )
     }
 
-    @Get(':id') //check
-    getPostsById(
-        @GetUser('id') userId: string,
-        @Param('id') postId: string
-    ) {
-        return this.postService.getPostsById(
-            userId,
-            postId
-        )
-    }
+    // @Get(':id') //check
+    // getPostsById(
+    //     @GetUser('id') userId: string,
+    //     @Param('id') postId: string
+    // ) {
+    //     return this.postService.getPostsById(
+    //         userId,
+    //         postId
+    //     )
+    // }
 
     @Get() ////not checked
     getUserPostsOnly(

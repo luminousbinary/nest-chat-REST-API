@@ -8,10 +8,12 @@ export class PostService {
 
     constructor(private prisma: PrismaService) { }
 
+    // not working
     getAllPosts(userId: string) {
         return this.prisma.post.findMany()
     }
 
+    // Get a post by its id and author ?????
     getPostsById(userId: string, postId: string) {
         return this.prisma.post.findFirst({
             where: {
@@ -47,7 +49,7 @@ export class PostService {
         const post = await this.prisma.post.update({
             where: {
                 id: postId,
-                
+
             },
             data: {
                 ...dto,
@@ -57,18 +59,37 @@ export class PostService {
         return post
     }
 
-    async deletePostsById(/*userId: string,*/ postId: string) { 
+    async deletePostsById(/*userId: string,*/ postId: string) {
 
-       return await this.prisma.post.delete({
+        return await this.prisma.post.delete({
             where: {
                 id: postId,
-                
+
             }
         })
 
     }
 
-    likePostById(userId: string, postId: string, dto: LikePostDto) { 
-        
+    likePostById(userId: string, postId: string, dto: LikePostDto) {
+
     }
 }
+
+
+
+/*
+data: {
+  name: 'Alice',
+  email: 'alice@prisma.io',
+  posts: {
+    create: [
+      {
+        title: 'Follow Prisma on Twitter',
+      },
+      {
+        title: 'Join us for GraphQL Conf in 2019',
+      },
+    ],
+  },
+}
+*/
