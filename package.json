@@ -11,7 +11,7 @@
     "db:dev:restart": " npm run db:dev:gen && npm run db:dev:up ",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
+    "start": "node dist/src/main",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -31,7 +31,7 @@
   "engines": {
     "node": "18"
   },
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "dependencies": {
     "firebase-admin": "^11.8.0",
     "firebase-functions": "^4.3.1",
