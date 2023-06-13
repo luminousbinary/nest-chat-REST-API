@@ -64,7 +64,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## Stay in touch
 
-- Author - [Luminous B.]
+- Author - [Luminous B.]()
 <!-- - (https://kamilmysliwiec.com) -->
 <!-- - Website - [https://nestjs.com](https://nestjs.com/) -->
 - Twitter - [@luminousbinary](https://twitter.com/luminousbinary)
